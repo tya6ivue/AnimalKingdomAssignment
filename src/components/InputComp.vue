@@ -4,14 +4,30 @@
     <v-app id="inspire">
       <v-main>
         <v-container>
-          <AddAnimal></AddAnimal>
+          <v-row class="text-center mb-10 mt-10">
+            <v-col cols="12" sm="5" md="5" lg="3">
+              <h2 class="text">Animals of the Kingdom</h2>
+            </v-col>
+            <v-col cols="12" sm="4" md="6" lg="7" mr="90" class="mr-90"></v-col>
+            <v-col cols="12" sm="3" md="1" lg="2" class="mb-4 mt-5">
+              <AddAnimal></AddAnimal>
+            </v-col>
+          </v-row>
 
-          <p class="font-italic ma-10">Animals of the kingdom</p>
           <v-row>
-            <v-col v-for="(animal, index) in categories" :key="index" cols="4">
-              <v-card>
-                <v-img :src="animal.imgSrc" class="width:50px">
-                  <v-btn class="float-right" @click="deleteAnimal"> X </v-btn>
+            <v-col
+              cols="12"
+              sm="4"
+              lg="3"
+              class="d-flex justify-center"
+              v-for="(animal, index) in categories"
+              :key="index"
+            >
+              <v-card width="250" margin="auto">
+                <v-img :src="animal.imgSrc" height="250">
+                  <v-btn class="float-right" text @click="deleteAnimal(index)">
+                    X
+                  </v-btn>
                 </v-img>
                 <v-card-title>
                   {{ animal.name }}
@@ -40,15 +56,15 @@ export default {
 
   methods: {
     ...mapActions("Anima", ["AddItems"]),
-    ...mapActions("Anima", ["DeleteItems"]),
 
     addAnimal() {
       this.AddItems({});
     },
-    deleteAnimal() {
-      alert("srgtrh");
-      this.DeleteItems({});
+    deleteAnimal(index) {
+      this.categories.splice(index, 1);
     },
   },
 };
 </script>
+<style scoped>
+</style>
