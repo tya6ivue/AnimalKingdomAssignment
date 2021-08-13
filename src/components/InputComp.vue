@@ -8,8 +8,7 @@
             <v-col cols="12" sm="5" md="4" lg="3">
               <h2 class="text">Animals of the Kingdom</h2>
             </v-col>
-            <v-col cols="12" sm="4" md="5" lg="7" mr="90"></v-col>
-            <v-col cols="12" sm="3" md="3" lg="2" class="mb-4 mt-5">
+            <v-col cols="12" sm="7" md="8" lg="9" class="">
               <AddAnimal></AddAnimal>
             </v-col>
           </v-row>
@@ -66,5 +65,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-</style>
