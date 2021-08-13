@@ -36,7 +36,6 @@ const getters = {};
 
 const mutations = {
   ADD_ITEMS(categories, payload) {
-    console.log("wafreh");
     state.categories.push(payload);
   },
 };
