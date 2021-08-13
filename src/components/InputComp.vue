@@ -55,10 +55,6 @@ export default {
 
   methods: {
     ...mapActions("Anima", ["AddItems"]),
-
-    addAnimal() {
-      this.AddItems({});
-    },
     deleteAnimal(index) {
       this.categories.splice(index, 1);
     },
